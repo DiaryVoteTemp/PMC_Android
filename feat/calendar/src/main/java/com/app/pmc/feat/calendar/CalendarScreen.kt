@@ -60,7 +60,3 @@ fun Day(day: CalendarDay) {
         Text(text = day.date.dayOfMonth.toString())
     }
 }
-
-
-
-//test
