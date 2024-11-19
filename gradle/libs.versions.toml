@@ -20,6 +20,9 @@ hiltCompiler = "1.2.0"
 appcompat = "1.7.0"
 material = "1.12.0"
 calender = "2.6.0"
+navigationCompose = "2.7.7"
+navigationComposeVersion = "2.8.3"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,7 +41,10 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
 #calender
-calender = { group = "com.kizitonwose", name = "calendarview", version.ref = "calender" }
+calender = { group = "com.kizitonwose.calendar", name = "compose", version.ref = "calender" }
+
+#navigation
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 
 #lottie
 lottie = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
@@ -60,6 +66,7 @@ androidx-hilt-complier = { group = "androidx.hilt", name = "hilt-compiler", vers
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltCompiler" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationComposeVersion" }
 
 
 [plugins]
