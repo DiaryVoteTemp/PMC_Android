@@ -1,15 +1,21 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
     namespace = "com.app.pmc"
-    compileSdk = 34
+    compileSdk = 35
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.13"
+    }
 
     defaultConfig {
         applicationId = "com.app.pmc"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -39,9 +45,7 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -50,6 +54,11 @@ android {
 }
 
 dependencies {
+    //hilt
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
+    ksp(libs.hilt.compiler)
+    ksp(libs.androidx.hilt.complier)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -70,4 +79,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(project(":feat:calendar"))
+    implementation(project(":feat:join"))
+    implementation(project(":core:ui"))
 }
