@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.app.pmc.feat.calendar"
+    namespace = "com.app.pmc.core.ui"
     compileSdk = 35
 
     composeOptions {
@@ -39,24 +39,22 @@ android {
 }
 
 dependencies {
-    //calendar
-    implementation(libs.calender)
-
     //compose
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.tooling)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    //navigation
-    implementation(libs.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.androidx.ui.text.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    debugImplementation(libs.ui.tooling)
 }

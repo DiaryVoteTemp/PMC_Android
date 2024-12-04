@@ -1,25 +1,28 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
-    namespace = "com.app.pmc.feat.calendar"
+    namespace = "com.app.pmc.feat.join"
     compileSdk = 35
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.13"
     }
 
+    buildFeatures {
+        compose = true
+    }
     defaultConfig {
         minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
-    buildFeatures {
-        compose = true
-    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -39,8 +42,8 @@ android {
 }
 
 dependencies {
-    //calendar
-    implementation(libs.calender)
+    //navigation
+    implementation(libs.navigation.compose)
 
     //compose
     implementation(libs.androidx.activity.compose)
@@ -50,8 +53,16 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    //navigation
-    implementation(libs.navigation.compose)
+    //orbit
+    implementation(libs.orbit.core)
+    implementation(libs.orbit.compose)
+    implementation(libs.orbit.viewmodel)
+
+    //hilt
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
+    ksp(libs.hilt.compiler)
+    ksp(libs.androidx.hilt.complier)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -59,4 +70,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(project(":core:ui"))
 }
