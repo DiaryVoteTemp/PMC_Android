@@ -22,3 +22,8 @@ dependencyResolutionManagement {
 rootProject.name = "PMC"
 include(":app")
 include(":feat:calendar")
+include(":feat:join")
+include(":core")
+include(":core:ui")
+include(":feat:home")
+include(":core:model")

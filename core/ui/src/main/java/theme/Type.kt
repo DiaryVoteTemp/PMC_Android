@@ -14,7 +14,7 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
-    )
+    ),
     /* Other default text styles to override
     titleLarge = TextStyle(
         fontFamily = FontFamily.Default,
@@ -31,4 +31,33 @@ val Typography = Typography(
         letterSpacing = 0.5.sp
     )
     */
+    //todo : 사이즈 수정
+    bodyMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.W400,
+        fontSize = 14.sp,
+        lineHeight = 40.sp,
+        letterSpacing = 0.sp
+    )
+)
+
+val LargeDescription = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.W600,
+    fontSize = 24.sp,
+    lineHeight = 34.sp
+)
+
+val ButtonLabel600 = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.W600,
+    fontSize = 14.sp,
+    lineHeight = 24.sp
+)
+
+val ButtonLabel500 = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.W500,
+    fontSize = 14.sp,
+    lineHeight = 24.sp
 )

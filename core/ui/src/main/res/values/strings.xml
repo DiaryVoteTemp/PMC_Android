@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_info_screen_title">정보를\n입력해 주세요.</string>
+    <string name="user_info_placeholder_number_only">숫자만 입력해 주세요.</string>
+    <string name="user_info_phone_number">휴대폰 번호</string>
+    <string name="user_info_placeholder_verify_number_required">인증번호를 입력해 주세요.</string>
+    <string name="user_info_verify_number">인증번호</string>
+    <string name="user_info_password">비밀번호</string>
+    <string name="user_info_placeholder_password_rule">영문, 숫자 조합 8자</string>
+    <string name="user_info_confirm_password">비밀번호 재입력</string>
+    <string name="user_info_email">이메일</string>
+    <string name="user_info_placeholder_email">비밀번호 재설정에 필요해요.</string>
+    <string name="user_info_verify_button_label">인증 요청</string>
+
+<!--    home-->
+    <string name="show_my_vote">투표 보기</string>
+    <string name="yesterday">어제</string>
+
+    <string name="next">다음</string>
+    <string name="complete">완료</string>
+    <string name="confirm">확인</string>
+    <string name="verify">인증</string>
+</resources>
