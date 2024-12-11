@@ -57,6 +57,7 @@ dependencies {
     //hilt
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
+    implementation(project(":feat:home"))
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.hilt.complier)
 

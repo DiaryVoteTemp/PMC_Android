@@ -24,4 +24,15 @@ val TextFieldBorderColor_Focused = Color(0xFF15181E)
 val ButtonDisableBackgroundColor = Color(0x0D717680)
 val ButtonDisableContentColor = Color(0xFFBCC0C6)
 
+val NormalButtonBorderColor = Color(0xFFE2E5E9)
+val NormalButtonContentColor = Color(0xFF3E4651)
+
+val NormalDiaryCardTitleColor = Color(0xFF1D2027)
+val NormalDiaryCardDescriptionColor = Color(0xFF9FA3AB)
+
+val HomeGradientCenter = Color(0xFF74A6FF)
+val HomeGradientBackground = Color(0xFFADDBEF)
+val HomeGradientTopCenter = Color(0xFFF1FF75)
+val HomeGradientTopBackground = Color(0xFFD2ECBD)
+
 

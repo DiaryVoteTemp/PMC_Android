@@ -12,6 +12,10 @@
     <string name="user_info_placeholder_email">비밀번호 재설정에 필요해요.</string>
     <string name="user_info_verify_button_label">인증 요청</string>
 
+<!--    home-->
+    <string name="show_my_vote">투표 보기</string>
+    <string name="yesterday">어제</string>
+
     <string name="next">다음</string>
     <string name="complete">완료</string>
     <string name="confirm">확인</string>

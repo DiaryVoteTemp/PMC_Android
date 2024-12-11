@@ -7,6 +7,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.app.pmc.feat.calendar.navigation.ROUTE_CALENDAR
 import com.app.pmc.feat.calendar.navigation.addCalendarGraph
+import com.app.pmc.feat.home.ROUTE_HOME
+import com.app.pmc.feat.home.addHomeGraph
 import com.app.pmc.feat.join.navigation.ROUTE_JOIN
 import com.app.pmc.feat.join.navigation.addJoinGraph
 
@@ -15,8 +17,9 @@ import com.app.pmc.feat.join.navigation.addJoinGraph
 fun PMCNavHost(
     navController: NavHostController
 ) {
-    NavHost(navController = navController, startDestination = ROUTE_JOIN) {
+    NavHost(navController = navController, startDestination = ROUTE_HOME) {
         addCalendarGraph(navController = navController)
         addJoinGraph(navController = navController)
+        addHomeGraph(navController = navController)
     }
 }

@@ -39,7 +39,6 @@ val Typography = Typography(
         lineHeight = 40.sp,
         letterSpacing = 0.sp
     )
-
 )
 
 val LargeDescription = TextStyle(
