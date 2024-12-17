@@ -35,6 +35,7 @@ import com.app.pmc.core.model.Diary
 import com.app.pmc.core.ui.R.drawable
 import com.app.pmc.core.ui.R.string
 import com.app.pmc.core.ui.card.DiaryCard
+import com.app.pmc.core.ui.surface.GradientSurface
 import com.app.pmc.ui.theme.NormalButtonBorderColor
 import com.app.pmc.ui.theme.NormalButtonContentColor
 import com.app.pmc.ui.theme.White
@@ -56,85 +57,79 @@ private fun HomeScreen(
     modifier: Modifier = Modifier,
     state: HomeUiState
 ) {
-    Box(
+    GradientSurface(
         modifier = modifier
             .fillMaxSize()
     ) {
-        TopGradientCircle(
-            modifier = modifier
-                .align(Alignment.TopEnd)
-        )
-        BottomGradientCircle(
-            modifier = modifier
-                .align(Alignment.BottomStart)
-        )
-        LazyColumn(
-            modifier = modifier
-                .fillMaxSize()
-                .padding(horizontal = 20.dp)
-        ) {
-            item {
-                Top()
-            }
-            item {
-                Text(
-                    text = stringResource(id = string.yesterday),
-                    fontWeight = FontWeight.W700,
-                    modifier = Modifier.padding(top = 20.dp)
-                )
-            }
-            items(state.diaryList.size, key = { index -> state.diaryList[index].id }) { _ ->
-                DiaryCard(
-                    modifier = Modifier.padding(top = 10.dp),
-                    title = "Title",
-                    description = "Description",
-                    date = "2021.10.10"
-                )
-            }
-            item {
-                Text(
-                    text = state.month,
-                    fontWeight = FontWeight.W700,
-                    modifier = Modifier.padding(top = 20.dp)
-                )
-            }
-            items(
-                state.monthlyDiaryList.size,
-                key = { index -> state.monthlyDiaryList[index].id }) { _ ->
-                DiaryCard(
-                    modifier = Modifier.padding(top = 10.dp),
-                    title = "Title",
-                    description = "Description",
-                    date = "2021.10.10"
-                )
+        Box {
+            LazyColumn(
+                modifier = modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 20.dp)
+            ) {
+                item {
+                    Top()
+                }
+                item {
+                    Text(
+                        text = stringResource(id = string.yesterday),
+                        fontWeight = FontWeight.W700,
+                        modifier = Modifier.padding(top = 20.dp)
+                    )
+                }
+                items(state.diaryList.size, key = { index -> state.diaryList[index].id }) { _ ->
+                    DiaryCard(
+                        modifier = Modifier.padding(top = 10.dp),
+                        title = "Title",
+                        description = "Description",
+                        date = "2021.10.10"
+                    )
+                }
+                item {
+                    Text(
+                        text = state.month,
+                        fontWeight = FontWeight.W700,
+                        modifier = Modifier.padding(top = 20.dp)
+                    )
+                }
+                items(
+                    state.monthlyDiaryList.size,
+                    key = { index -> state.monthlyDiaryList[index].id }) { _ ->
+                    DiaryCard(
+                        modifier = Modifier.padding(top = 10.dp),
+                        title = "Title",
+                        description = "Description",
+                        date = "2021.10.10"
+                    )
 
+                }
             }
-        }
-        Canvas(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(100.dp)
-                .align(Alignment.BottomStart)
-        ) {
-            val gradientBrush = Brush.verticalGradient(
-                colors = listOf(Color.Transparent, White.copy(alpha = 0.95f)),
-                startY = 0f,
-                endY = size.height
-            )
-            drawRect(brush = gradientBrush)
-        }
-        FloatingActionButton(
-            onClick = { /*TODO*/ },
-            shape = RoundedCornerShape(50),
-            containerColor = White,
-            modifier = modifier
-                .align(Alignment.BottomEnd)
-                .padding(20.dp)
-        ) {
-            Icon(
-                imageVector = Icons.Default.Add,
-                contentDescription = "Add",
-            )
+            Canvas(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(100.dp)
+                    .align(Alignment.BottomStart)
+            ) {
+                val gradientBrush = Brush.verticalGradient(
+                    colors = listOf(Color.Transparent, White.copy(alpha = 0.95f)),
+                    startY = 0f,
+                    endY = size.height
+                )
+                drawRect(brush = gradientBrush)
+            }
+            FloatingActionButton(
+                onClick = { /*TODO*/ },
+                shape = RoundedCornerShape(50),
+                containerColor = White,
+                modifier = modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(20.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Add,
+                    contentDescription = "Add",
+                )
+            }
         }
     }
 }
@@ -193,42 +188,6 @@ private fun VoteViewButton() {
                 text = stringResource(id = string.show_my_vote),
             )
         }
-    }
-}
-
-@Composable
-private fun TopGradientCircle(
-    modifier: Modifier = Modifier
-) {
-    Box(modifier) {
-        Image(
-            painter = painterResource(id = drawable.image_home_gradient_top_end_background),
-            contentDescription = "Background",
-            modifier = Modifier.fillMaxSize()
-        )
-        Image(
-            painter = painterResource(id = drawable.image_home_gradient_top_center),
-            contentDescription = "Background",
-            modifier = Modifier.fillMaxSize()
-        )
-    }
-}
-
-@Composable
-private fun BottomGradientCircle(
-    modifier: Modifier = Modifier
-) {
-    Box(modifier) {
-        Image(
-            painter = painterResource(id = drawable.image_home_gradient_bottom_background),
-            contentDescription = "Background",
-            modifier = Modifier.fillMaxSize()
-        )
-        Image(
-            painter = painterResource(id = drawable.image_home_gradient_bottom_center),
-            contentDescription = "Background",
-            modifier = Modifier.fillMaxSize()
-        )
     }
 }
 

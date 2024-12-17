@@ -62,7 +62,6 @@ dependencies {
     //hilt
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
-    implementation(project(":core:model"))
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.hilt.complier)
 
@@ -74,4 +73,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(project(":core:ui"))
+    implementation(project(":core:model"))
 }
