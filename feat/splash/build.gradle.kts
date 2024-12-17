@@ -6,8 +6,15 @@ plugins {
 }
 
 android {
-    namespace = "com.app.pmc.feat.home"
+    namespace = "com.app.pmc.feat.splash"
     compileSdk = 35
+
+    defaultConfig {
+        minSdk = 26
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.13"
@@ -15,13 +22,6 @@ android {
 
     buildFeatures {
         compose = true
-    }
-
-    defaultConfig {
-        minSdk = 26
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -43,6 +43,7 @@ android {
 }
 
 dependencies {
+
     //navigation
     implementation(libs.navigation.compose)
 
@@ -73,5 +74,4 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(project(":core:ui"))
-    implementation(project(":core:model"))
 }
