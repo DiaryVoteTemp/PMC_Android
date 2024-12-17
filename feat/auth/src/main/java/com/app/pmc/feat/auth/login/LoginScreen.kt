@@ -27,10 +27,11 @@ fun LoginScreen(
     GradientSurface {
         LazyColumn(
             modifier = modifier.padding(horizontal = 20.dp).fillMaxSize(),
+            verticalArrangement = Arrangement.Center
         ) {
             item {
                 Text(
-                    modifier = Modifier.padding(top = 117.dp, bottom = 34.dp),
+                    modifier = Modifier.padding(bottom = 34.dp),
                     style = LargeDescription,
                     text = stringResource(R.string.login)
                 )
@@ -49,8 +50,6 @@ fun LoginScreen(
                 supportingText = stringResource(R.string.find_my_password),
                 supportingTextAlign = TextAlign.End,
                 )
-            }
-            item {
                 EchogButton(
                     modifier = Modifier.fillMaxWidth().padding(top = 24.dp),
                     label = stringResource(R.string.next),
